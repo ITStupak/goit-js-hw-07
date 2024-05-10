@@ -24,3 +24,11 @@ const images = [
     alt: "Lighthouse Coast Sea",
   }
 ];
+
+// for (let obj of images) {
+//   document.querySelector('.gallery').insertAdjacentHTML('beforeEnd', `<li><img src="${obj.url}" alt="${obj.alt}"></li>`);
+// };
+
+for (let i = 3; i < images.length; i++) {
+  document.querySelector('.gallery').insertAdjacentHTML('beforeEnd', `<li><img src="${images[i].url}" alt="${images[i].alt}"></li>`);
+};
