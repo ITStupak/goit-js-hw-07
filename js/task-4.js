@@ -3,10 +3,8 @@ const userForm = document.querySelector('.login-form');
 const callback = (event) => {
     event.preventDefault();    
     const form = event.target;
-    const emailInput = form.elements.email;
-    const passwordInput = form.elements.password;
-    const email = emailInput.value.trim();
-    const password = passwordInput.value.trim();
+    const email = form.elements.email.value.trim();
+    const password = form.elements.password.value.trim();
 
     if (email === '' || password === '') {
         return alert('All form fields must be filled in!');
@@ -17,8 +15,7 @@ const callback = (event) => {
         password: password,
     };
     console.log(formData);
-    emailInput.value = '';
-    passwordInput.value = '';
+    form.reset();
 };
 
 userForm.addEventListener('submit', callback);
