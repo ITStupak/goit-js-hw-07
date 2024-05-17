@@ -14,14 +14,12 @@ const boxesContainer = document.querySelector('#boxes');
 // Функція для створювання елементів необхідної кількості:
 function createBoxes(amount) {
   let sizeBox = 30;
+  let boxes = '';
   for (let i = 0; i < amount; i++) {
-    const box = document.createElement('div');
-    box.style.width = `${sizeBox}px`;
-    box.style.height = `${sizeBox}px`;
-    box.style.backgroundColor = getRandomHexColor();
-    boxesContainer.appendChild(box);
-    sizeBox += 10;
+      boxes += `<div style="width: ${sizeBox}px; height: ${sizeBox}px; background-color: ${getRandomHexColor()}"></div>`;
+      sizeBox += 10;
   }
+  boxesContainer.innerHTML = boxes;
 }
 
 // Функція для очищення елементів:

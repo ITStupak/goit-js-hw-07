@@ -25,20 +25,14 @@ const images = [
   }
 ];
 
-/* Варіант 1 ======================================================== */
-
-// За допомогою цикла for додаємо три зображення у список:
-
-for (let i = 3; i < images.length; i++) {
-  const gallery = document.querySelector('.gallery');
-  gallery.insertAdjacentHTML('beforeEnd', `
+const gallery = document.querySelector('.gallery');
+const galleryItems = images.map(image => `
   <li>
-    <img src="${images[i].url}" alt="${images[i].alt}">
+    <img src="${image.url}" alt="${image.alt}" />
   </li>
-`);
-};
-
-// Створюємо та додаємо стилі для списку з зображеннями:
+`).slice(3).join('');
+console.log(galleryItems);
+gallery.insertAdjacentHTML('beforeend', galleryItems);
 
 const style = document.createElement('style');
 style.textContent = `
@@ -53,45 +47,9 @@ style.textContent = `
     margin: 10px;
   }
   .gallery img {
-    display: block;
-    max-width: 400px;
+    max-width: 300px;
     height: auto;
     border-radius: 10px;
   }
 `;
 document.head.append(style);
-
-/* Варіант 2 ======================================================== */
-
-// За допомогою перебираючого методу map та методу join створюємо розмітку зображень (але всіх) та додаємо її у список за допомогою insertAdjacentHTML:
-
-// const gallery = document.querySelector('.gallery');
-// const galleryItems = images.map(image => `
-//   <li>
-//     <img src="${image.url}" alt="${image.alt}" />
-//   </li>
-// `).join('');
-// gallery.insertAdjacentHTML('beforeend', galleryItems);
-
-// Створюємо та додаємо стилі для списку з зображеннями:
-
-// const style = document.createElement('style');
-// console.log(style);
-// style.textContent = `
-//   .gallery {
-//     display: flex;
-//     flex-wrap: wrap;
-//     justify-content: space-around;
-//     list-style: none;
-//     padding: 0;
-//   }
-//   .gallery li {
-//     margin: 10px;
-//   }
-//   .gallery img {
-//     max-width: 300px;
-//     height: auto;
-//     border-radius: 10px;
-//   }
-// `;
-// document.head.append(style);
