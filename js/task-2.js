@@ -27,6 +27,8 @@ const images = [
 
 /* Варіант 1 ======================================================== */
 
+// За допомогою цикла for додаємо зображення у список:
+
 for (let i = 0; i < images.length; i++) {
   const gallery = document.querySelector('.gallery');
   gallery.insertAdjacentHTML('beforeEnd', `
@@ -35,6 +37,8 @@ for (let i = 0; i < images.length; i++) {
   </li>
 `);
 };
+
+// Створюємо та додаємо стилі для списку з зображеннями:
 
 const style = document.createElement('style');
 style.textContent = `
@@ -59,31 +63,35 @@ document.head.append(style);
 
 /* Варіант 2 ======================================================== */
 
-/* const gallery = document.querySelector('.gallery');
-const galleryItems = images.map(image => `
-  <li>
-    <img src="${image.url}" alt="${image.alt}" />
-  </li>
-`).join('');
-gallery.insertAdjacentHTML('beforeend', galleryItems);
+// За допомогою перебираючого методу map та методу join створюємо розмітку зображень та  додаємо її у список за допомогою insertAdjacentHTML:
 
-const style = document.createElement('style');
-console.log(style);
-style.textContent = `
-  .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    list-style: none;
-    padding: 0;
-  }
-  .gallery li {
-    margin: 10px;
-  }
-  .gallery img {
-    max-width: 300px;
-    height: auto;
-    border-radius: 10px;
-  }
-`;
-document.head.append(style); */
+// const gallery = document.querySelector('.gallery');
+// const galleryItems = images.map(image => `
+//   <li>
+//     <img src="${image.url}" alt="${image.alt}" />
+//   </li>
+// `).join('');
+// gallery.insertAdjacentHTML('beforeend', galleryItems);
+
+// Створюємо та додаємо стилі для списку з зображеннями:
+
+// const style = document.createElement('style');
+// console.log(style);
+// style.textContent = `
+//   .gallery {
+//     display: flex;
+//     flex-wrap: wrap;
+//     justify-content: space-around;
+//     list-style: none;
+//     padding: 0;
+//   }
+//   .gallery li {
+//     margin: 10px;
+//   }
+//   .gallery img {
+//     max-width: 300px;
+//     height: auto;
+//     border-radius: 10px;
+//   }
+// `;
+// document.head.append(style);
