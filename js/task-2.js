@@ -27,9 +27,9 @@ const images = [
 
 /* Варіант 1 ======================================================== */
 
-// За допомогою цикла for додаємо зображення у список:
+// За допомогою цикла for додаємо три зображення у список:
 
-for (let i = 0; i < images.length; i++) {
+for (let i = 3; i < images.length; i++) {
   const gallery = document.querySelector('.gallery');
   gallery.insertAdjacentHTML('beforeEnd', `
   <li>
@@ -54,7 +54,7 @@ style.textContent = `
   }
   .gallery img {
     display: block;
-    max-width: 300px;
+    max-width: 400px;
     height: auto;
     border-radius: 10px;
   }
@@ -63,7 +63,7 @@ document.head.append(style);
 
 /* Варіант 2 ======================================================== */
 
-// За допомогою перебираючого методу map та методу join створюємо розмітку зображень та  додаємо її у список за допомогою insertAdjacentHTML:
+// За допомогою перебираючого методу map та методу join створюємо розмітку зображень (але всіх) та додаємо її у список за допомогою insertAdjacentHTML:
 
 // const gallery = document.querySelector('.gallery');
 // const galleryItems = images.map(image => `
